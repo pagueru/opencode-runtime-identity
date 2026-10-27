@@ -1,0 +1,45 @@
+{
+  "name": "opencode-runtime-identity",
+  "version": "0.1.0",
+  "description": "Injects the active OpenCode agent, model, provider, and variant into a single runtime identity instruction, with an attribution tool for prior assistant messages.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "PROJECT_CONTEXT.md",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "validate": "npm run check && npm test && npm run build"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "agent",
+    "model",
+    "identity"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.14.18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.3"
+  }
+}
